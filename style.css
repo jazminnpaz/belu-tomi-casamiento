@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: #f7f5f0;
+  color: #5f5f5f;
+}
+
+/* fondo con hojas */
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("hojas.png") no-repeat center;
+  background-size: cover;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.event-text strong {
+  display: block;
+  margin-bottom: 10px; /* separa horario del lugar */
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* HERO */
+.hero h1 {
+  font-size: 52px;
+  letter-spacing: 6px;
+  color: #816f49;
+}
+
+.the {
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  margin: -10px 0;
+  display: block;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  margin: 20px 0;
+  color: #4b4b4b;
+}
+
+.subtitle {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.date {
+  font-size: 18px;
+  color: #816f49;
+  letter-spacing: 3px;
+}
+
+.place {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0;
+}
+
+.countdown div {
+  flex: 1;
+}
+
+.countdown span {
+  font-size: 26px;
+  color: #6a8f86;
+}
+
+.countdown small {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* RSVP */
+.rsvp h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #816f49;
+  margin-bottom: 35px;
+}
+
+
+.rsvp form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-family: inherit;
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: #6a8f86;
+  color: white;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  gap: 40px;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+
+.info-box {
+  text-align: center;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.info-box img {
+  width: 80px;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+.info-box h3 {
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+
+.info-box p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.fiesta-section h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;        /* más chica */
+  color: #816f49;
+  margin-bottom: 18px;
+  letter-spacing: 2px;   /* la afina visualmente */
+  font-weight: normal;  /* clave */
+}
+
+.fiesta-section .subtitulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  color: #7a7a7a;
+}
+
+.subtitulo {
+  margin-bottom: 70px;
+  color: #7a7a7a;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  background-color: #6a8f86;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gg-ring,
+.gg-glass,
+.gg-music-note {
+  --ggs: 2;
+  color: #6a8f86;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.icon-svg {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  display: block;
+  fill: none;
+  stroke: #6a8f86;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #816f49;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  background: #816f49;
+  color: white;
+  border: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 30px;
+  background-color: #6a8f86;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.small {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.ceremony-party {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 40px;
+  justify-content: center; /* 👈 CLAVE */
+  margin: 90px 0;
+}
+
+/* tarjeta */
+.event-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 30px;
+  padding: 60px 20px 35px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+
+  width: 220px; /* probá 400px / 450px / 500px */
+}
+
+
+/* icono circular */
+.event-icon {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* texto */
+.event-text {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #6a6a6a;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .ceremony-party {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.section-divider {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 40px;
+}
+
+.section-divider span {
+  width: 90px;
+  height: 2px;
+  background: #c9b38a;
+  border-radius: 2px;
+}
+
+.info-icon {
+  height: 60px;            /* 👈 reserva el mismo espacio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.info-card {
+  position: relative;
+  text-align: center;
+}
+
+.info-icon-circle {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.info-content {
+  background: rgba(255,255,255,0.85);
+  border-radius: 30px;
+  padding: 60px 20px 35px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+
+  width: 220px;   /* 👈 mismo ancho que event-card */
+  margin: 0 auto; /* centra la tarjeta */
+}
+
+
+
+@media (max-width: 480px) {
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.info-content {
+  background: rgba(255,255,255,0.85);
+  border-radius: 30px;
+  padding: 60px 20px 35px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+
+  min-height: 230px; /* 👈 CLAVE */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.regalos-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+  line-height: 1.9;
+  color: #7a7a7a;
+}
+
+.secondary-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  color: #7a7a7a;
+}
+
+.event-time {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 500;      /* mismo grosor */
+  color: #7a7a7a;        /* mismo color */
+  letter-spacing: 1px;
+}
+
+.section-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #6a6a6a;
+}
+
+.modal-content select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-family: inherit;
+  text-align: center;
+}
+
+.modal-content select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-family: inherit;
+  text-align: center;
+}
+
+.info-card.center {
+  grid-column: 1 / -1; /* ocupa las 2 columnas */
+  display: flex;
+  justify-content: center;
+}
