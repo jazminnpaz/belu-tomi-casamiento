@@ -207,17 +207,32 @@ button {
   display: block;
 }
 
-.icon-svg {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 18px;
-  display: block;
-  fill: none;
-  stroke: #6a8f86;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* ===== ICONOS UNIFICADOS ===== */
+
+.icon{
+  font-size: 26px;
+  color: #6a8f86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
+
+/* círculo blanco */
+.event-icon,
+.info-icon-circle{
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
 
 .modal {
   position: fixed;
@@ -310,8 +325,14 @@ button {
   position: relative;
   box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 
-  width: 220px; /* probá 400px / 450px / 500px */
+  width: 220px;              /* 👈 mismo ancho */
+  min-height: 260px;         /* 👈 misma altura visual */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 
 /* icono circular */
@@ -395,9 +416,16 @@ button {
   padding: 60px 20px 35px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 
-  width: 220px;   /* 👈 mismo ancho que event-card */
-  margin: 0 auto; /* centra la tarjeta */
+  width: 220px;
+  margin: 0 auto;
+
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 🔥 cambio clave */
 }
+
 
 
 
@@ -408,18 +436,7 @@ button {
   }
 }
 
-.info-content {
-  background: rgba(255,255,255,0.85);
-  border-radius: 30px;
-  padding: 60px 20px 35px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 
-  min-height: 230px; /* 👈 CLAVE */
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 .regalos-text {
   font-family: 'Playfair Display', serif;
@@ -482,3 +499,189 @@ button {
   display: flex;
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+
+  /* Contenedor general */
+  .container {
+  max-width: 100%;
+  padding: 60px 16px;
+  }
+  
+  /* Countdown bien centrado */
+  .countdown {
+  justify-content: center;
+  gap: 20px;
+  }
+  
+  /* Ceremonia y Fiesta */
+  .ceremony-party {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  }
+  
+  .event-card{
+    width: 90%;
+    max-width: 320px;
+  }
+  
+  
+  /* 🔥 INFO FIESTA (CLAVE) */
+  .info-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80px;
+  justify-items: center;
+  margin: 80px 0;
+  }
+  
+
+  
+  /* Evita corrimientos raros */
+  section {
+  text-align: center;
+  }
+  }
+
+  
+  .album {
+    width: 100%;
+    max-width: 350px;
+    margin: 30px auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .album-track {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .album-track img {
+    width: 500px;   /* más ancha */
+    height: 400px;  /* menos alta */
+    object-fit: cover;
+    border-radius: 20px;
+    scroll-snap-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+  }
+
+
+  .firma {
+    width: 100%;
+    margin: 30px 0 0;
+    padding: 14px 0;
+    text-align: center;
+  
+    font-size: 12px;
+    font-style: italic;
+    color: #7a7a7a;
+  
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+  
+    letter-spacing: 0.5px;
+  }
+  
+  .firma a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .firma a:hover {
+    text-decoration: underline;
+  }
+  
+  /* CIERRE FINAL */
+.final-message {
+  text-align: center;
+  padding: 60px 20px 20px;
+  max-width: 420px;           /* mismo ancho que .container */
+  margin: 0 auto;
+}
+
+.final-message p {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;            /* igual a .regalos-text */
+  font-weight: 400;
+  letter-spacing: 1.8px;      /* coherente con el resto */
+  line-height: 1.9;
+  color: #7a7a7a;             /* mismo gris suave */
+}
+
+.final-message .names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;            /* un poco más chica que el hero */
+  color: #816f49;             /* dorado principal */
+  margin-top: 24px;
+}
+
+.info-inner {
+  flex: 1;                /* 🔑 ocupa todo el alto */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== REGALOS MODAL MEJORADO ===== */
+
+.gift-modal {
+  text-align: center;
+  padding: 40px 26px;
+}
+
+.gift-intro {
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  line-height: 1.8;
+  color: #7a7a7a;
+  margin-bottom: 28px;
+}
+
+.gift-box {
+  background: rgba(255,255,255,0.7);
+  border-radius: 20px;
+  padding: 18px 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+.gift-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #816f49;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.gift-box ul {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #6f6f6f;
+}
+
+.gift-box li {
+  margin: 2px 0;
+}
+
+.small-data {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+.info-icon-circle {
+  color: #6a8f86; /* verde oficial */
+
+}
+
+
+
+
+
+
+
